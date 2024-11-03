@@ -25,11 +25,17 @@ namespace WaterfallSFS
         public override void Load()
         {
             // This tells the loader what to run when your mod is loaded.
-            Part part = Base.partsLoader.parts[""];
+    
+            foreach (var kvp in Base.partsLoader.parts)
+            {
+                Debug.Log(kvp.Key);
+            }
+
+            Part part = Base.partsLoader.parts["Engine Hawk"];
             if (part.GetModules<FlameRandomizer>().First() is FlameRandomizer flame)
             {
                 GameObject go = flame.gameObject;
-                // ...
+                //...
             }
         }
 
